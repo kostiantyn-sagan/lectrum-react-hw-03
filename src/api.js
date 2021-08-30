@@ -7,7 +7,19 @@ const uri = `${base}${searchParams}`;
 export const api = {
   news: {
     fetch: async () => {
-      return await fetch(`${uri}/news`);
+      const response = await fetch(uri);
+
+      if (response.status >= 400 && response.status < 500) {
+        throw new Error('Неправильный запрос');
+      }
+
+      if (response.status >= 500) {
+        throw new Error('Сервер не отвечает');
+      }
+
+      const { hits } = await response.json();
+
+      return hits;
     },
   },
 };

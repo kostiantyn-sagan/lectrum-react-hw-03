@@ -3,24 +3,33 @@ import { api } from '../../api';
 
 export const useApiLoader = () => {
   const [db, setDb] = useState([]);
-  const [isFetching, setIsFetching] = useState(false);
+  const [isFetching, setFetching] = useState(false);
+  const [isClientError, setClientError] = useState(false);
+  const [isServerError, setServerError] = useState(false);
 
   useEffect(() => {
-    console.log('Пошел запрос');
-    setIsFetching({ isFetching: true });
-    (async () => {
-      const response = await api.news.fetch();
-      const { hits } = await response.json();
-      console.log(db);
-      console.log(hits);
-      console.log([...db, ...hits]);
-
-      setDb(db => [...db, ...hits]);
-    })();
-
-    return () => {
-      // setIsFetching({ isFetching: false });
-    };
+    setFetching(true);
   }, []);
-  return { db, isFetching };
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const images = await api.news.fetch();
+        setFetching(false);
+        setDb(db => [...db, ...images]);
+      } catch ({ message }) {
+        setFetching(false);
+
+        if (message === 'Неправильный запрос') {
+          setClientError(true);
+        }
+
+        if (message === 'Сервер не отвечает') {
+          setServerError(true);
+        }
+      }
+    })();
+  }, []);
+
+  return { db, isFetching, isServerError, isClientError };
 };
