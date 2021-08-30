@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/lectrum-react-hw-03/static/css/main.5753bbab.chunk.css",
+    "main.js": "/lectrum-react-hw-03/static/js/main.5780b497.chunk.js",
+    "main.js.map": "/lectrum-react-hw-03/static/js/main.5780b497.chunk.js.map",
+    "runtime-main.js": "/lectrum-react-hw-03/static/js/runtime-main.c1fd6a60.js",
+    "runtime-main.js.map": "/lectrum-react-hw-03/static/js/runtime-main.c1fd6a60.js.map",
+    "static/js/2.d7d298f0.chunk.js": "/lectrum-react-hw-03/static/js/2.d7d298f0.chunk.js",
+    "static/js/2.d7d298f0.chunk.js.map": "/lectrum-react-hw-03/static/js/2.d7d298f0.chunk.js.map",
+    "index.html": "/lectrum-react-hw-03/index.html",
+    "static/css/main.5753bbab.chunk.css.map": "/lectrum-react-hw-03/static/css/main.5753bbab.chunk.css.map",
+    "static/js/2.d7d298f0.chunk.js.LICENSE.txt": "/lectrum-react-hw-03/static/js/2.d7d298f0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1fd6a60.js",
+    "static/js/2.d7d298f0.chunk.js",
+    "static/css/main.5753bbab.chunk.css",
+    "static/js/main.5780b497.chunk.js"
+  ]
+}
